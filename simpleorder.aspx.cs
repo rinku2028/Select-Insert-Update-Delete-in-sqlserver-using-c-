@@ -18,6 +18,8 @@ namespace gridview
 
         protected void btnview_Click(object sender, EventArgs e)
         {
+        
+            //select from database and view in gridview
             string dataconn = "Data Source=desktop-tb3r1mj;Initial Catalog=access;Integrated Security=True";
             SqlConnection sqlconn = new SqlConnection(dataconn);
             try
@@ -25,7 +27,6 @@ namespace gridview
                 sqlconn.Open();
                 Response.Write("database connected");
                 string sql = "select id,name from info";
-                //SqlCommand sqlcommand = new SqlCommand(sql, sqlconn);
                 SqlDataAdapter sqldata = new SqlDataAdapter(sql,sqlconn);
                 DataSet data = new DataSet();
                 sqldata.Fill(data, "info");
@@ -34,7 +35,7 @@ namespace gridview
 
                
             }
-            catch
+            catch(Exception ex)
             {
                 Response.Write("Database not connected");
             }
