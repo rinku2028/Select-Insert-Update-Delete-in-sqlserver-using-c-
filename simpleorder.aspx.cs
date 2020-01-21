@@ -32,7 +32,6 @@ namespace gridview
                 sqldata.Fill(data, "info");
                 gdview.DataSource = data.Tables["info"].DefaultView;
                 gdview.DataBind();
-
                
             }
             catch(Exception ex)
