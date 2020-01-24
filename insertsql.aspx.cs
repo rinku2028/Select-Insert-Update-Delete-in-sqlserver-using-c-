@@ -32,8 +32,6 @@ namespace gridview
                 sqlcommand.ExecuteNonQuery();
                 lblMessage.Text = "Data inserted successfully!!";
                 sqlconn.Close();
-
-
             }
             catch (Exception ex)
             {
